@@ -193,7 +193,7 @@ minetest.register_entity("vehicles:bullet", {
 	collisionbox = {0, 0, 0, 0, 0, 0},
 	on_activate = function(self)
 		minetest.sound_play("shot",
-			{gain = 0.4, max_hear_distance = 3, loop = false})
+			{max_hear_distance = 128, loop = false, pos=self.object:get_pos()})
 	end,
 	on_step = function(self, obj, pos)
 		minetest.after(10, function()
